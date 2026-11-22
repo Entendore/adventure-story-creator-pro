@@ -1,0 +1,84 @@
+{
+  "title": "The Lost Kingdom",
+  "author": "Sample Author",
+  "description": "An epic adventure through a forgotten realm",
+  "start_scene": "intro",
+  "variables": {
+    "courage": {"default": 50, "min": 0, "max": 100},
+    "gold": {"default": 10, "min": 0, "max": 9999}
+  },
+  "scenes": {
+    "intro": {
+      "title": "The Beginning",
+      "category": "Start",
+      "status": "complete",
+      "text": "You stand at the edge of the **Lost Kingdom**.\n\nYour courage: {courage}\nYour gold: {gold}\n\nThe wind whispers ancient secrets.",
+      "transition": "fade",
+      "effect": "fog",
+      "options": [
+        {
+          "text": "Enter the kingdom bravely",
+          "target": "castle_gate",
+          "grants_tags": "brave",
+          "variable_changes": "courage+10"
+        },
+        {
+          "text": "Search the outskirts first",
+          "target": "outskirts",
+          "grants_tags": "cautious"
+        }
+      ]
+    },
+    "castle_gate": {
+      "title": "The Castle Gate",
+      "category": "Exploration",
+      "status": "complete",
+      "text": "The massive gate looms before you. {if brave}You feel confident.{endif}\n\n{if gold>20}You have enough gold to bribe the guard.{endif}",
+      "transition": "slide-left",
+      "effect": "dust",
+      "options": [
+        {
+          "text": "Bribe the guard (20 gold)",
+          "target": "throne_room",
+          "requires_tags": "",
+          "variable_changes": "gold-20"
+        },
+        {
+          "text": "Sneak past",
+          "target": "dungeon",
+          "requires_tags": "cautious"
+        }
+      ]
+    },
+    "outskirts": {
+      "title": "The Outskirts",
+      "category": "Exploration",
+      "status": "complete",
+      "text": "You find an old chest with **15 gold** inside!",
+      "transition": "fade",
+      "options": [
+        {
+          "text": "Take the gold and continue",
+          "target": "castle_gate",
+          "variable_changes": "gold+15"
+        }
+      ]
+    },
+    "throne_room": {
+      "title": "Victory!",
+      "category": "Ending",
+      "status": "complete",
+      "text": "You reach the throne room and claim the kingdom!\n\n**You win!**\n\nFinal gold: {gold}\nFinal courage: {courage}",
+      "transition": "zoom",
+      "options": []
+    },
+    "dungeon": {
+      "title": "The Dungeon",
+      "category": "Ending",
+      "status": "complete",
+      "text": "You are caught by the guards and thrown into the dungeon.\n\n**Game Over**",
+      "transition": "dissolve",
+      "options": []
+    }
+  }
+}

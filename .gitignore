@@ -1,0 +1,72 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+*.autosave
+*.bak
+*.tmp
+logs/
+
+# Assets (large files)
+assets/images/*.png
+assets/images/*.jpg
+assets/audio/*.mp3
+assets/audio/*.wav
+!assets/images/.gitkeep
+!assets/audio/.gitkeep
+
+# Added by Git Repo Creator
+# Media, archives, and AI models
+*.7z
+*.aac
+*.avi
+*.blend
+*.flac
+*.flv
+*.gz
+*.iso
+*.jpeg
+*.m4a
+*.mkv
+*.mov
+*.mp4
+*.ogg
+*.rar
+*.tar
+*.webm
+*.wmv
+*.zip
+# Python / dev junk
+.env
+.env.local
+*.log
+# Cleanup dirs kept on disk but ignored
+.pytest_cache/
+.venv/
+checkpoints/
+model_cache/
+models/
+node_modules/
+# GitHub Actions
+.github/

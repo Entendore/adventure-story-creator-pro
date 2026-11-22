@@ -1,0 +1,9 @@
+# Adventure Story Creator Pro - Dependencies
+# Core GUI framework
+PySide6>=6.5.0
+
+# Optional: For advanced features (uncomment if needed)
+# Pillow>=10.0.0          # Image processing
+# pygame>=2.5.0           # Audio playback (alternative)
+# markdown>=3.4.0         # Markdown rendering
+# pygments>=2.15.0        # Syntax highlighting for scripts
